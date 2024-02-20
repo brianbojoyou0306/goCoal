@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 				}
 			  }
 			  const authtoken = jwt.sign(data, process.env.JWTPRIVATEKEY);
-		res.status(200).send({ data: authtoken,id:user._id,type:user.Type,OrganizationName:user.OrganizationName, message: "logged in successfully" });
+		res.status(200).send({ data: authtoken,id:user._id,Type:user.Type,OrganizationName:user.OrganizationName, message: "logged in successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}

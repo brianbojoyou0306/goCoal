@@ -1,42 +1,56 @@
-import React, { useState } from "react";
-
-import PropTypes from "prop-types";
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
 import "./login.css";
-async function loginUser(credentials) {
-  return fetch("http://localhost:8080/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
-const Login = ({ setToken }) => {
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
+
+function LoginUser() {
+  const [data, setData] = useState({ userid: "", password: "" });
+	const [error, setError] = useState("");
+	const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.placeholder]: input.value });
+    console.log(input.type)
+	}
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password,
-    });
-    setToken(token);
-  };
+		e.preventDefault();
+    console.log(data)
+
+		try {
+			const url = "http://localhost:8080/api/login";
+      console.log(data)
+
+			const { data: res } = await axios.post(url, data);
+			console.log(res)
+			localStorage.setItem("token", res.data);
+      localStorage.setItem("Type", res.Type);
+			localStorage.setItem("OrganizationName", res.OrganizationName);
+			localStorage.setItem("id", res.id);
+      window.location = "/";
+
+		} 
+    catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+        console.log(error)
+			}
+		}
+	}
   return (
     <div>
       <div className="login-wrapper">
         <h1>Please Log In</h1>
         <form onSubmit={handleSubmit}>
           <label>
-            <p>Username</p>
-            <input type="text" onChange={(e) => setUserName(e.target.value)} />
-          </label>
+            <p>UserID</p>
+            <input type="text" value={data.userid}  onChange={handleChange} placeholder="userid" required="required"/>          </label>
           <label>
             <p>Password</p>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <input type="password"  onChange={handleChange}
+							  value={data.password} placeholder="password" required="required"/>
           </label>
           <div>
             <button type="submit">Submit</button>
@@ -46,7 +60,5 @@ const Login = ({ setToken }) => {
     </div>
   );
 };
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
-export default Login;
+
+export default LoginUser;

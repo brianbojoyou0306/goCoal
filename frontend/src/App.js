@@ -4,22 +4,24 @@ import "./App.css";
 import Portal from "./components/Portal";
 import Coal from "./components/Coal";
 import Login from "./components/Login";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 function App() {
-  const [token, setToken] = useState();
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  const Type = localStorage.getItem("Type");
+
   return (
     <div className="App">
       <div className="wrapper">
-        <h1>Application</h1>
-        <BrowserRouter>
           <Routes>
-            <Route path="/coal" element={<Coal/>} />
-            <Route path="/portal" element={<Portal/>} />
+          {Type==='mine' && <Route path="/" exact element={<Coal />} />}
+          {Type==='railway' && <Route path="/" exact element={<Portal />} />}
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          
+            {/* <Route path="/coal" element={<Coal/>} />
+            <Route path="/portal" element={<Portal/>} /> */}
+            <Route path="/login" element={<Login/>} />
+
           </Routes>
-        </BrowserRouter>
+      
       </div>
     </div>
   );
