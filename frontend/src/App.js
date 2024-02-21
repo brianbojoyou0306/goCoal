@@ -11,14 +11,18 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-          <Routes>
-          {Type==='mine' && <Route path="/" exact element={<Coal />} />}
-          {Type==='railway' && <Route path="/" exact element={<Portal />} />}
+        <Routes>
+          {Type === "mine" && <Route path="/" exact element={<Coal />} />}
+          {Type === "railway" && <Route path="/" exact element={<Portal />} />}
           <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/login" element={<Login/>} />
           </Routes>
       
+         
+        
       </div>
+      {/* <Route path="/coal" element={<Coal/>} />
+            <Route path="/portal" element={<Portal/>} /> */}
     </div>
   );
 }

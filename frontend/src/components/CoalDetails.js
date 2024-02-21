@@ -1,68 +1,46 @@
 import { Avatar, Space, Table } from "antd";
 import { useEffect, useState } from "react";
-import { getCustomers } from "../API";
+import Records from "../list.json";
+import Axios from "axios";
 
 function Customers() {
-  const [loading, setLoading] = useState(false);
-  const [dataSource, setDataSource] = useState([]);
+  const [columns, setColumns] = useState([]);
+  const [records, setRecords] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
-    getCustomers().then((res) => {
-      setDataSource(res.users);
-      setLoading(false);
+    Axios.get("http://localhost:3000/users").then((res) => {
+      setColumns(Object.keys(res.data[0]));
+      setRecords(res.data);
     });
   }, []);
-
+  const status = "approved";
+  const statusClassName =
+    status === "approved" ? "text-approved" : "text-declined";
   return (
-    <div class="details">
-      <Space size={35} direction="vertical">
-        <h4>Your Orders</h4>
-        <Table
-          loading={loading}
-          columns={[
-            {
-              title: "Photo",
-              dataIndex: "image",
-              render: (link) => {
-                return <Avatar src={link} />;
-              },
-            },
-            {
-              title: "First Name",
-              dataIndex: "firstName",
-            },
-            {
-              title: "LastName",
-              dataIndex: "lastName",
-            },
-            {
-              title: "Email",
-              dataIndex: "email",
-            },
-            {
-              title: "Phone",
-              dataIndex: "phone",
-            },
-
-            {
-              title: "address",
-              dataIndex: "address",
-              render: (address) => {
-                return (
-                  <span>
-                    {address.address}, {address.city}
-                  </span>
-                );
-              },
-            },
-          ]}
-          dataSource={dataSource}
-          pagination={{
-            pageSize: 4,
-          }}
-        ></Table>
-      </Space>
+    <div className="details">
+      <h3>Your Orders</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Date</th>
+            <th>Issuing Authority</th>
+            <th>Duration</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Records.map((record, index) => (
+            <tr key={index}>
+              <td>{record.order}</td>
+              <td>{record.date}</td>
+              <td>{record.issue}</td>
+              <td>{record.duration}</td>
+              <td className={statusClassName}>{record.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
