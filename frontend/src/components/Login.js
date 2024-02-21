@@ -5,7 +5,8 @@ import "./login.css";
 import img from "../img/login-coal.png";
 function LoginUser() {
   const [data, setData] = useState({ userid: "", password: "" });
-  const [error, setError] = useState("");
+  // eslint-disable-next-line
+  const [error, setError] = useState(""); 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.placeholder]: input.value });
     console.log(input.type);

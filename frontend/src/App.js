@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import "./App.css";
 
 import Portal from "./components/Portal";
@@ -15,11 +15,7 @@ function App() {
           {Type==='mine' && <Route path="/" exact element={<Coal />} />}
           {Type==='railway' && <Route path="/" exact element={<Portal />} />}
           <Route path="/" element={<Navigate replace to="/login" />} />
-          
-            {/* <Route path="/coal" element={<Coal/>} />
-            <Route path="/portal" element={<Portal/>} /> */}
             <Route path="/login" element={<Login/>} />
-
           </Routes>
       
       </div>

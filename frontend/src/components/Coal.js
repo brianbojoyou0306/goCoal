@@ -4,9 +4,9 @@ import {
   ShoppingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Card, Space, Statistic, Table, Typography } from "antd";
+import { Card, Space, Statistic } from "antd";
 import { useEffect, useState } from "react";
-import { getCustomers, getInventory, getOrders, getRevenue } from "../API";
+import { getCustomers, getInventory, getOrders } from "../API";
 import Details from "./CoalDetails";
 import Chart from "./CoalChart";
 import {
@@ -18,8 +18,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
 import "./coal.css";
+import {  useNavigate } from "react-router-dom";
 
 ChartJS.register(
   CategoryScale,
@@ -31,6 +31,17 @@ ChartJS.register(
 );
 
 function Dashboard() {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("Type");
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("OrganizationName");
+    
+    navigate("/login");
+
+};
   const [orders, setOrders] = useState(0);
   const [inventory, setInventory] = useState(0);
   const [customers, setCustomers] = useState(0);
@@ -48,13 +59,13 @@ function Dashboard() {
       setCustomers(res.total);
     });
   }, []);
-
+  const OrganizationName = localStorage.getItem("OrganizationName");
   return (
     <div>
       <div class="coal" id="coal">
         <div>
           <Space size={20} direction="vertical">
-            <h2>Welcome, Admin</h2>
+            <h2>{OrganizationName}</h2>
             <h4>DashBoard</h4>
             <Space direction="horizontal">
               <DashboardCard
@@ -125,7 +136,7 @@ function Dashboard() {
         </div>
         <div>
           <div class="logout">
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
           </div>
           <Chart />
         </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactApexChart from "react-apexcharts";
 
 const ApexChart = () => {
@@ -52,7 +51,7 @@ const ApexChart = () => {
           series={seriesData}
           type="area"
           height={200}
-          width={500}
+          width={600}
         />
       </div>
       <div id="html-dist"></div>
