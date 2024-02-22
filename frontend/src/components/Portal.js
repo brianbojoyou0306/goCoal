@@ -156,11 +156,20 @@ function DashboardCard({ title, value, icon }) {
 }
 
 function DashboardChart() {
+
+  const [data, setData] = useState({  coaltype: "" });
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, "coaltype": input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    console.log(data)
+  }
   return (
     <div className="coal__next" id="power">
       <div className="search__part">
-        <input className="search" type="text" placeholder="Search"></input>
-        <button className="search_btn">Search</button>
+        <input className="search" type="text" placeholder="Search" value={data.coaltype} onChange={handleChange}></input>
+        <button className="search_btn" onClick={handleSubmit}>Search</button>
       </div>
       <Powerplant />
     </div>
