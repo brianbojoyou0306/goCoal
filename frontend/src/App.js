@@ -12,16 +12,16 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-         <Routes>
+        <Routes>
           {Type === "mine" && <Route path="/" exact element={<Coal />} />}
           {Type === "railway" && <Route path="/" exact element={<Portal />} />}
           {Type === "powerplant" && <Route path="/" exact element={<PowerPlant />} />}
 
           <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/login" element={<Login/>} />
-          </Routes> 
+          </Routes>
       
-         
+       
         
       </div>
       {/* <Route path="/coal" element={<Coal/>} />

@@ -1,10 +1,6 @@
-
 import Records from "../list.json";
 
-
 function Customers() {
-
-
   const status = "approved";
   const statusClassName =
     status === "approved" ? "text-approved" : "text-declined";

@@ -7,7 +7,7 @@ import {
 import { Card, Space, Statistic } from "antd";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders } from "../API";
-import Powerplant from "./PowerPlant"
+import Powerplant from "./PowerPlant";
 import Chart from "./CoalChart";
 import {
   Chart as ChartJS,
@@ -158,8 +158,11 @@ function DashboardCard({ title, value, icon }) {
 function DashboardChart() {
   return (
     <div class="coal__next" id="power">
-      <input className="search" type="text" placeholder="Search"></input>
-      <Powerplant/>
+      <div className="search__part">
+        <input className="search" type="text" placeholder="Search"></input>
+        <button className="search_btn">Search</button>
+      </div>
+      <Powerplant />
     </div>
   );
 }

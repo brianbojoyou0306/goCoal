@@ -79,6 +79,24 @@ table td {
     margin-top: -20px;
 }
 
+.search__part {
+    display: flex;
+    flex-direction: row;
+}
+
+.search__part button {
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    transition: 1s all ease-in-out;
+}
+
+.search__part button:hover {
+    cursor: pointer;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
