@@ -4,7 +4,6 @@ import "./App.css";
 import Portal from "./components/Portal";
 import Coal from "./components/Coal";
 import Login from "./components/Login";
-import PowerPlant from "./components/PowerPlant"
 import { Navigate, Routes, Route } from "react-router-dom";
 function App() {
   const Type = localStorage.getItem("Type");

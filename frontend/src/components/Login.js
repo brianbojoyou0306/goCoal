@@ -39,9 +39,9 @@ function LoginUser() {
     }
   };
   return (
-    <div class="login__app">
+    <div className="login__app">
       <div className="login-wrapper">
-        {/* <h1 class="login">LOG IN </h1> */}
+        {/* <h1 className="login">LOG IN </h1> */}
         <form onSubmit={handleSubmit}>
           <label>
             <p>UserID</p>
@@ -54,7 +54,7 @@ function LoginUser() {
             />{" "}
           </label>
           <label>
-            <p class="label">Password</p>
+            <p className="label">Password</p>
             <input
               type="password"
               onChange={handleChange}

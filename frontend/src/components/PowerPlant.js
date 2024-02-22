@@ -3,21 +3,21 @@ import Records from "../list.json";
 
 function Customers() {
 
-
-    const status = "approved";
-const statusClassName =
-  status === "approved" ? "text-approved" : "text-declined";
+ function print() {
+  alert("order placed");
+}
+  
     return (
       <div className="details">
         <h3>PowerPlant - Coal mines</h3>
         <table>
           <thead>
             <tr>
-              <th>Order</th>
-              <th>Date</th>
-              <th>Issuing Authority</th>
-              <th>Duration</th>
-              <th>Status</th>
+              <th>S.no</th>
+              <th>Coal Mine Name</th>
+              <th>Location </th>
+              <th>Stocks Availabe</th>
+              <th>Place order</th>
             </tr>
           </thead>
           <tbody>
@@ -27,8 +27,8 @@ const statusClassName =
                 <td>{record.date}</td>
                 <td>{record.issue}</td>
                 <td>{record.duration}</td>
-                <td className={statusClassName}>
-                  {record.status}
+                <td onClick={print}>
+                    <button>{record.status}</button>
                 </td>
               </tr>
             ))}

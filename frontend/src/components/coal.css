@@ -24,27 +24,7 @@
     margin-top: 60px;
 }
 
-.logout {
-    display: flex;
-    float: right;
-    margin-top: -15px;
-    align-items: right;
-}
 
-.logout button {
-    background: black;
-    color: white;
-    border: none;
-    outline: none;
-    padding: 10px 10px;
-    transition: 1s all ease-in-out;
-}
-
-.logout button:hover {
-    background: white;
-    color: black;
-    cursor: pointer;
-}
 
 .details {
     margin-top: 60px;
