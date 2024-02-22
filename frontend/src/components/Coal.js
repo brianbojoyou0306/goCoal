@@ -80,7 +80,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Orders"}
+                title={"Stocks"}
                 value={orders}
               />
               <DashboardCard
@@ -95,7 +95,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Inventory"}
+                title={"Orders Recived"}
                 value={inventory}
               />
               <DashboardCard
@@ -110,7 +110,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Customer"}
+                title={"Active Users"}
                 value={customers}
               />
               <DashboardCard
@@ -125,7 +125,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Revenue"}
+                title={"Total Sales"}
                 value={revenue}
               />
             </Space>

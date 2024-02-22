@@ -7,7 +7,10 @@ const coalType = require("../Models/coal")
         const newReq = new coalType(
             {
                 id:req.body.id,
+                name:req.body.name,
+                location:req.body.location,
                 coaltype:req.body.coaltype,
+
             }   
             
         )

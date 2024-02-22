@@ -1,13 +1,14 @@
 import Records from "../list.json";
 
-function Customers() {
+function Customers(props) {
   const print = () => {
     alert("hello");
-    window.dispatchEvent(new Event("resize"));
+    
   }
+  const { item } = props;
   return (
     <div className="details">
-      <h3>PowerPlant - Coal mines</h3>
+      <h3>OUR Recomendations</h3>
       <table>
         <thead>
           <tr>
@@ -19,14 +20,14 @@ function Customers() {
           </tr>
         </thead>
         <tbody>
-          {Records.map((record, index) => (
+          {item.map((item, index) => (
             <tr key={index}>
-              <td>{record.order}</td>
-              <td>{record.date}</td>
-              <td>{record.issue}</td>
-              <td>{record.duration}</td>
+              <td>{index}</td>
+              <td>{item.name}</td>
+              <td>{item.location}</td>
+              <td>{item.avlStocks}</td>
               <td>
-                <button onClick={(e) => print(e)}>submit</button>
+                <button onClick={print}>Order</button>
               </td>
             </tr>
           ))}

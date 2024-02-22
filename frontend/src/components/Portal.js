@@ -20,6 +20,7 @@ import {
 } from "chart.js";
 import "./coal.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 ChartJS.register(
   CategoryScale,
@@ -79,7 +80,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Orders"}
+                title={"Coal Stocks Available"}
                 value={orders}
               />
               <DashboardCard
@@ -97,21 +98,7 @@ function Dashboard() {
                 title={"Inventory"}
                 value={inventory}
               />
-              <DashboardCard
-                icon={
-                  <UserOutlined
-                    style={{
-                      color: "purple",
-                      backgroundColor: "rgba(0,255,255,0.25)",
-                      borderRadius: 20,
-                      fontSize: 24,
-                      padding: 8,
-                    }}
-                  />
-                }
-                title={"Customer"}
-                value={customers}
-              />
+              
               <DashboardCard
                 icon={
                   <DollarCircleOutlined
@@ -124,7 +111,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Revenue"}
+                title={"Required Coal Stocks"}
                 value={revenue}
               />
             </Space>
@@ -156,6 +143,7 @@ function DashboardCard({ title, value, icon }) {
 }
 
 function DashboardChart() {
+  const [items, setitems] = useState();
 
   const [data, setData] = useState({  coaltype: "" });
   const handleChange = ({ currentTarget: input }) => {
@@ -163,7 +151,16 @@ function DashboardChart() {
   };
 
   const handleSubmit = async (e) => {
-    console.log(data)
+    setitems([])
+    const params = {
+      coaltype: data.coaltype
+    };
+    
+    const res = await axios.get("http://localhost:8080/api/getcoaltype",{params})
+        setitems(res.data)
+
+       
+       
   }
   return (
     <div className="coal__next" id="power">
@@ -171,7 +168,8 @@ function DashboardChart() {
         <input className="search" type="text" placeholder="Search" value={data.coaltype} onChange={handleChange}></input>
         <button className="search_btn" onClick={handleSubmit}>Search</button>
       </div>
-      <Powerplant />
+      
+      {items && <Powerplant  item ={items} key ={items.id}/>}
     </div>
   );
 }

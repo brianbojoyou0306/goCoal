@@ -11,7 +11,7 @@ function Customers() {
         <thead>
           <tr>
             <th>Order</th>
-            <th>Date</th>
+            <th>Delivery Date</th>
             <th>Issuing Authority</th>
             <th>Duration</th>
             <th>Status</th>
