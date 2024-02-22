@@ -15,7 +15,7 @@ function App() {
          <Routes>
           {Type === "mine" && <Route path="/" exact element={<Coal />} />}
           {Type === "railway" && <Route path="/" exact element={<Portal />} />}
-          {Type === "powerplant" && <Route path="/" exact element={<PowerPlant />} />}
+          {Type === "powerplant" && <Route path="/" exact element={<Portal />} />}
 
           <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/login" element={<Login/>} />
