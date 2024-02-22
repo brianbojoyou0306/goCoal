@@ -134,7 +134,7 @@ function Dashboard() {
           </Space>
         </div>
         <div>
-          <div class="logout">
+          <div className="logout">
             <button onClick={logout}>Logout</button>
           </div>
           <Chart />
@@ -157,7 +157,7 @@ function DashboardCard({ title, value, icon }) {
 
 function DashboardChart() {
   return (
-    <div class="coal__next" id="power">
+    <div className="coal__next" id="power">
       <div className="search__part">
         <input className="search" type="text" placeholder="Search"></input>
         <button className="search_btn">Search</button>

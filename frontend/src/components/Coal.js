@@ -62,7 +62,7 @@ function Dashboard() {
   const OrganizationName = localStorage.getItem("OrganizationName");
   return (
     <div>
-      <div class="coal" id="coal">
+      <div className="coal" id="coal">
         <div>
           <Space size={20} direction="vertical">
             <h2>{OrganizationName}</h2>
@@ -135,7 +135,7 @@ function Dashboard() {
           </Space>
         </div>
         <div>
-          <div class="logout">
+          <div className="logout">
             <button onClick={logout}>Logout</button>
           </div>
           <Chart />
@@ -158,7 +158,7 @@ function DashboardCard({ title, value, icon }) {
 
 function DashboardChart() {
   return (
-    <div class="coal__next">
+    <div className="coal__next">
 
         <Details />
     </div>
