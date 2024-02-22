@@ -1,18 +1,10 @@
-import { Avatar, Space, Table } from "antd";
-import { useEffect, useState } from "react";
+
 import Records from "../list.json";
-import Axios from "axios";
+
 
 function Customers() {
-  const [columns, setColumns] = useState([]);
-  const [records, setRecords] = useState([]);
 
-  useEffect(() => {
-    Axios.get("http://localhost:3000/users").then((res) => {
-      setColumns(Object.keys(res.data[0]));
-      setRecords(res.data);
-    });
-  }, []);
+
   const status = "approved";
   const statusClassName =
     status === "approved" ? "text-approved" : "text-declined";
