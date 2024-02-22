@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import "./App.css";
 
 import Portal from "./components/Portal";
@@ -19,9 +19,6 @@ function App() {
           <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/login" element={<Login/>} />
           </Routes>
-      
-       
-        
       </div>
       {/* <Route path="/coal" element={<Coal/>} />
             <Route path="/portal" element={<Portal/>} /> */}

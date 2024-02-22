@@ -16,15 +16,13 @@
 }
 
 .coal__next .details {
-    width: 200%;
+    width: 100%;
 }
 
 #chart {
     margin-left: -10px;
     margin-top: 60px;
 }
-
-
 
 .details {
     margin-top: 60px;
@@ -64,7 +62,8 @@ table td {
     flex-direction: row;
 }
 
-.search__part button {
+.search__part button,
+table button {
     background: black;
     color: white;
     border: none;
@@ -79,9 +78,7 @@ table td {
 
 table {
     width: 100%;
-    border-collapse: collapse;
     border-radius: 8px;
-    overflow: hidden;
     margin-top: 20px;
 }
 
@@ -101,6 +98,10 @@ th {
 td {
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
+}
+
+tr td {
+    padding: 15px 15px;
 }
 
 
