@@ -1,10 +1,10 @@
-import React  from "react";
+import React from "react";
 import "./App.css";
 
 import Portal from "./components/Portal";
 import Coal from "./components/Coal";
 import Login from "./components/Login";
-import PowerPlant from "./components/PowerPlant"
+import PowerPlant from "./components/PowerPlant";
 import { Navigate, Routes, Route } from "react-router-dom";
 function App() {
   const Type = localStorage.getItem("Type");
@@ -15,14 +15,13 @@ function App() {
         <Routes>
           {Type === "mine" && <Route path="/" exact element={<Coal />} />}
           {Type === "railway" && <Route path="/" exact element={<Portal />} />}
-          {Type === "powerplant" && <Route path="/" exact element={<PowerPlant />} />}
+          {Type === "powerplant" && (
+            <Route path="/" exact element={<Portal />} />
+          )}
 
           <Route path="/" element={<Navigate replace to="/login" />} />
-            <Route path="/login" element={<Login/>} />
-          </Routes>
-      
-       
-        
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </div>
       {/* <Route path="/coal" element={<Coal/>} />
             <Route path="/portal" element={<Portal/>} /> */}
