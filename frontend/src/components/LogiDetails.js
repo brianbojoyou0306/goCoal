@@ -1,6 +1,11 @@
 import Records from "../logistics.json";
-
+import ReactModal from "react-modal";
+import React, { useState } from "react";
+import Modal from "./Modal";
 function Customers() {
+
+ const [openModal, setOpenModal] = useState(false);
+
   const print = () => {
     alert("work");
   };
@@ -26,12 +31,13 @@ function Customers() {
               <td>{record.duration}</td>
 
               <td className="logistics_status">
-                <button onClick={print} className="accept">
-                  Accept
+                <button
+                  onClick={() => setOpenModal(true)}
+                  
+                >
+                  Request
                 </button>
-                <button onClick={print} className="reject">
-                  Reject
-                </button>
+                <Modal open={openModal} onClose={() => setOpenModal(false)} />
               </td>
             </tr>
           ))}
