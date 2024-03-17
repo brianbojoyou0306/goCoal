@@ -2,12 +2,13 @@ import {
   DollarCircleOutlined,
   ShoppingCartOutlined,
   ShoppingOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { Card, Space, Statistic } from "antd";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders } from "../API";
-import Powerplant from "./PowerPlant";
-import Chart from "./CoalChart";
+import Details from "./LogiDetails";
+import Chart from "./LogiChart";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -19,7 +20,6 @@ import {
 } from "chart.js";
 import "./coal.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 ChartJS.register(
   CategoryScale,
@@ -79,7 +79,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Coal Stocks Available"}
+                title={"XYZ"}
                 value={orders}
               />
               <DashboardCard
@@ -94,10 +94,24 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Inventory"}
+                title={"XYZ"}
                 value={inventory}
               />
-              
+              <DashboardCard
+                icon={
+                  <UserOutlined
+                    style={{
+                      color: "purple",
+                      backgroundColor: "rgba(0,255,255,0.25)",
+                      borderRadius: 20,
+                      fontSize: 24,
+                      padding: 8,
+                    }}
+                  />
+                }
+                title={"Active"}
+                value={customers}
+              />
               <DashboardCard
                 icon={
                   <DollarCircleOutlined
@@ -110,7 +124,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Required Coal Stocks"}
+                title={"Sales"}
                 value={revenue}
               />
             </Space>
@@ -142,33 +156,9 @@ function DashboardCard({ title, value, icon }) {
 }
 
 function DashboardChart() {
-  const [items, setitems] = useState();
-
-  const [data, setData] = useState({  coaltype: "" });
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, "coaltype": input.value });
-  };
-
-  const handleSubmit = async (e) => {
-    setitems([])
-    const params = {
-      coaltype: data.coaltype
-    };
-    
-    const res = await axios.get("http://localhost:8080/api/getcoaltype",{params})
-        setitems(res.data)
-
-       
-       
-  }
   return (
-    <div className="coal__next" id="power">
-      <div className="search__part">
-        <input className="search" type="text" placeholder="Search" value={data.coaltype} onChange={handleChange}></input>
-        <button className="search_btn" onClick={handleSubmit}>Search</button>
-      </div>
-      
-      {items && <Powerplant  item ={items} key ={items.id}/>}
+    <div className="coal__next">
+      <Details />
     </div>
   );
 }

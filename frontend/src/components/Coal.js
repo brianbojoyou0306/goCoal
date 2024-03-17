@@ -19,7 +19,7 @@ import {
   Legend,
 } from "chart.js";
 import "./coal.css";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 ChartJS.register(
   CategoryScale,
@@ -38,10 +38,9 @@ function Dashboard() {
     localStorage.removeItem("token");
     localStorage.removeItem("id");
     localStorage.removeItem("OrganizationName");
-    
-    navigate("/login");
 
-};
+    navigate("/login");
+  };
   const [orders, setOrders] = useState(0);
   const [inventory, setInventory] = useState(0);
   const [customers, setCustomers] = useState(0);
@@ -76,7 +75,7 @@ function Dashboard() {
                       backgroundColor: "rgba(0,255,0,0.25)",
                       borderRadius: 20,
                       fontSize: 24,
-                      padding: 8,
+                      padding: 10,
                     }}
                   />
                 }
@@ -91,7 +90,7 @@ function Dashboard() {
                       backgroundColor: "rgba(0,0,255,0.25)",
                       borderRadius: 20,
                       fontSize: 24,
-                      padding: 8,
+                      padding: 10,
                     }}
                   />
                 }
@@ -106,7 +105,7 @@ function Dashboard() {
                       backgroundColor: "rgba(0,255,255,0.25)",
                       borderRadius: 20,
                       fontSize: 24,
-                      padding: 8,
+                      padding: 10,
                     }}
                   />
                 }
@@ -159,8 +158,7 @@ function DashboardCard({ title, value, icon }) {
 function DashboardChart() {
   return (
     <div className="coal__next">
-
-        <Details />
+      <Details />
     </div>
   );
 }
