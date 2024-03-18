@@ -2,7 +2,7 @@ import Records from "../list.json";
 
 function Customers(props) {
   const print = () => {
-    alert("Order Placed");
+    alert("hello");
     
   }
   const { item } = props;
@@ -20,7 +20,7 @@ function Customers(props) {
           </tr>
         </thead>
         <tbody>
-          {item.map((item, index) => (
+          {Records.map((item, index) => (
             <tr key={index}>
               <td>{index}</td>
               <td>{item.name}</td>

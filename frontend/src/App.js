@@ -5,6 +5,7 @@ import Portal from "./components/Portal";
 import Coal from "./components/Coal";
 import Login from "./components/Login";
 import PowerPlant from "./components/PowerPlant";
+import Logistics from "./components/Logistics"
 import { Navigate, Routes, Route } from "react-router-dom";
 function App() {
   const Type = localStorage.getItem("Type");
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <Routes>
+        {/* <Routes>
           {Type === "mine" && <Route path="/" exact element={<Coal />} />}
           {Type === "railway" && <Route path="/" exact element={<Portal />} />}
           {Type === "powerplant" && (
@@ -21,7 +22,8 @@ function App() {
 
           <Route path="/" element={<Navigate replace to="/login" />} />
           <Route path="/login" element={<Login />} />
-        </Routes>
+        </Routes> */}
+        <Logistics/>
       </div>
       {/* <Route path="/coal" element={<Coal/>} />
             <Route path="/portal" element={<Portal/>} /> */}

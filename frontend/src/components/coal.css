@@ -77,16 +77,18 @@ table button {
 }
 
 table {
-    width: 100%;
+    width: 90%;
     border-radius: 8px;
     margin-top: 20px;
+    z-index: 9999;
+    position: relative;
 }
 
 
 /* Style for table header */
 
 th {
-    background-color: #2c2b2b;
+    background-color: #050840;
     color: white;
     padding: 12px 15px;
     text-align: left;
@@ -126,4 +128,13 @@ tr:hover {
     .coal__next .details {
         width: 100%;
     }
+}
+
+.coal .ant-card .ant-card-body {
+    padding: 20px;
+}
+
+.details table {
+    position: absolute;
+    z-index: 999;
 }
