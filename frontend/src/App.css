@@ -183,3 +183,18 @@
 .logistics_status {
     color: green;
 }
+
+.btnPrimary {
+    cursor: pointer;
+}
+
+.btnOutline {
+    cursor: pointer;
+}
+
+.input__plant {
+    width: 100%;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+}

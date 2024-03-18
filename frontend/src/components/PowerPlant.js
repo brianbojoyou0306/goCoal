@@ -1,10 +1,8 @@
 import Records from "../list.json";
-
+import { useState } from "react";
+import Plant from "./Plant";
 function Customers(props) {
-  const print = () => {
-    alert("hello");
-    
-  }
+  const [openModal, setOpenModal] = useState(false);
   const { item } = props;
   return (
     <div className="details">
@@ -27,7 +25,13 @@ function Customers(props) {
               <td>{item.location}</td>
               <td>{item.avlStocks}</td>
               <td>
-                <button onClick={print}>Order</button>
+                <button
+                  className="plant__btn"
+                  onClick={() => setOpenModal(true)}
+                >
+                  Order
+                </button>
+                <Plant open={openModal} onClose={() => setOpenModal(false)} />
               </td>
             </tr>
           ))}

@@ -3,12 +3,6 @@ import ReactModal from "react-modal";
 import React, { useState } from "react";
 import Modal from "./Modal";
 function Customers() {
-
- 
-
-  const print = () => {
-    alert("work");
-  };
   return (
     <div className="details">
       <h3>Your Orders</h3>
