@@ -5,6 +5,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Card, Space, Statistic } from "antd";
+import ReactModal from "react-modal";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders } from "../API";
 import Details from "./LogiDetails";
@@ -20,7 +21,7 @@ import {
 } from "chart.js";
 import "./coal.css";
 import { useNavigate } from "react-router-dom";
-
+import Modal from "./Modal";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -133,6 +134,7 @@ function Dashboard() {
             </Space>
           </Space>
         </div>
+
         <div>
           <div className="logout">
             <button onClick={logout}>Logout</button>
@@ -156,8 +158,11 @@ function DashboardCard({ title, value, icon }) {
 }
 
 function DashboardChart() {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="coal__next">
+      <button className="btn__request" onClick={() => setOpenModal(true)}>Request</button>
+      <Modal open={openModal} onClose={() => setOpenModal(false)} />
       <Details />
     </div>
   );

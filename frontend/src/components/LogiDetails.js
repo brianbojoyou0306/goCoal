@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 function Customers() {
 
- const [openModal, setOpenModal] = useState(false);
+ 
 
   const print = () => {
     alert("work");
@@ -31,13 +31,7 @@ function Customers() {
               <td>{record.duration}</td>
 
               <td className="logistics_status">
-                <button
-                  onClick={() => setOpenModal(true)}
-                  
-                >
-                  Request
-                </button>
-                <Modal open={openModal} onClose={() => setOpenModal(false)} />
+                Accepted
               </td>
             </tr>
           ))}
