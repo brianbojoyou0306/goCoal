@@ -13,7 +13,7 @@ function Customers() {
             <th>Starting</th>
             <th>Ending</th>
             <th>Duration</th>
-            <th>Status</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -24,9 +24,7 @@ function Customers() {
               <td>{record.issue}</td>
               <td>{record.duration}</td>
 
-              <td className="logistics_status">
-                Accepted
-              </td>
+             
             </tr>
           ))}
         </tbody>

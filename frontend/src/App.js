@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Navigate replace to="/login" />} />
           <Route path="/login" element={<Login />} />
         </Routes> */}
-        <Portal/>
+        <Logistics/>
       </div>
       {/* <Route path="/coal" element={<Coal/>} />
             <Route path="/portal" element={<Portal/>} /> */}
