@@ -2,7 +2,7 @@ import Records from "../list.json";
 
 function Customers(props) {
   const print = () => {
-    alert("hello");
+    alert("Order Placed");
     
   }
   const { item } = props;
