@@ -9,6 +9,7 @@ const addCoaltype = require("./Routes/addCoaltype");
 const getcoaltype = require("./Routes/getCoaltypes");
 const updateCoalStocks = require("./Routes/updateCoalstocks");
 const getAllOrders = require("./Routes/getAllOrders");
+const buyCoal = require("./Routes/buyCoal")
 // database connection
 connection();
 
@@ -23,6 +24,7 @@ app.use("/api/addcoaltype", addCoaltype);
 app.use("/api/getcoaltype", getcoaltype);
 app.use("/api/updatecoaltype", updateCoalStocks);
 app.use("/api/getAllOrders", getAllOrders);
+app.use("/api/buycoal", buyCoal);
 
 //hosting the server
 const port = process.env.PORT || 8080;
