@@ -193,8 +193,14 @@
 }
 
 .input__plant {
-    width: 100%;
+    width: 50%;
     padding: 10px 10px;
     border: none;
     outline: none;
+}
+
+.input_fields {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }

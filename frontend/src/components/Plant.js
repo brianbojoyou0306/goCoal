@@ -17,8 +17,17 @@ const Plant = ({ open, onClose }) => {
           <div className="content">
             <p>PowerPlant ABC</p>
             <h1>STARTING - ENDING</h1>
-            <div>
-              <input className="input__plant" type="number" placeholder="Enter how much Tons you need" />
+            <div className="input_fields">
+              <input
+                className="input__plant"
+                type="number"
+                placeholder="How Much Tons?"
+              />
+              <input
+                className="input__plant"
+                type="date"
+                placeholder="Enter the date"
+              />
             </div>
           </div>
 
@@ -26,9 +35,9 @@ const Plant = ({ open, onClose }) => {
             <button className="btnPrimary">
               <span className="bold">ACCEPT</span>
             </button>
-            <button className="btnOutline">
+            {/* <button className="btnOutline">
               <span className="bold">REJECT</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
