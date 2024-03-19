@@ -18,7 +18,7 @@ function Customers(props) {
           </tr>
         </thead>
         <tbody>
-          {Records.map((item, index) => (
+          {item.map((item, index) => (
             <tr key={index}>
               <td>{index}</td>
               <td>{item.name}</td>
@@ -29,8 +29,9 @@ function Customers(props) {
                   className="plant__btn"
                   onClick={() => setOpenModal(true)}
                 >
-                  Order
+                  ORDER
                 </button>
+                {console.log(this)}
                 <Plant open={openModal} onClose={() => setOpenModal(false)} />
               </td>
             </tr>

@@ -24,8 +24,8 @@ function App() {
           <Route path="/coal" element={<Coal/>} />
             <Route path="/portal" element={<Portal/>} />
           <Route path="/login" element={<Login />} />
-        </Routes> */}
-        <Logistics/>
+        </Routes> 
+        
       </div>
      
     </div>

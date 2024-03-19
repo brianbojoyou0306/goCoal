@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const Plant = ({ open, onClose }) => {
+const Plant = ({ open, onClose,item }) => {
   if (!open) return null;
 
   return (
@@ -15,29 +15,26 @@ const Plant = ({ open, onClose }) => {
             CLOSE
           </p>
           <div className="content">
-            <p>PowerPlant ABC</p>
+            <p>{item.name}</p>
             <h1>STARTING - ENDING</h1>
             <div className="input_fields">
               <input
                 className="input__plant"
                 type="number"
-                placeholder="How Much Tons?"
+                placeholder="Required Coal in Tons"
               />
               <input
                 className="input__plant"
                 type="date"
-                placeholder="Enter the date"
+                placeholder="Enter the delivery date"
               />
             </div>
           </div>
 
           <div className="btnContainer">
-            <button className="btnPrimary">
-              <span className="bold">ACCEPT</span>
+            <button className="btnPrimary" onClick={onClose} >
+              <span className="bold" >ORDER</span>
             </button>
-            {/* <button className="btnOutline">
-              <span className="bold">REJECT</span>
-            </button> */}
           </div>
         </div>
       </div>

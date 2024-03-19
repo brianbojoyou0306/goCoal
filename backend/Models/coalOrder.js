@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const coalmines = new mongoose.Schema({
+const coalOrder = new mongoose.Schema({
 	plantid:{type:String,
         },
     mineid:{type:String,
