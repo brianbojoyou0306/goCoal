@@ -188,32 +188,14 @@ function DashboardChart() {
   return (
     <div className="coal__next">
       <Popup
-        trigger={<button className="btn__request"> Request</button>}
+        trigger={<button className="btn__request"> Check Requests</button>}
         modal
         nested
       >
         {(close) => (
           <div className="modal">
             <div className="content">
-              {/* <p>PowerPlant ABC</p>
-              <h1>BCD1 - BCD2</h1> */}
-              {/* <Expand>
-                Our facility utilizes cutting-edge technology to generate clean,
-                reliable energy, powering communities efficiently and
-                responsibly. With a focus on environmental stewardship, we
-                employ advanced systems to minimize emissions and maximize
-                efficiency. At the heart of our operations lies a commitment to
-                delivering uninterrupted power while prioritizing the well-being
-                of both people and the planet. Experience the future of energy
-                production with us.
-              </Expand>
-              <br /> */}
-
-              {/* <button className="btnPrimary" onClick={handleButtonClick}>
-                <span onClick={close} className="bold">
-                  ACCEPT
-                </span>
-              </button> */}
+              
               <Carousel data-bs-theme="dark">
                 <Carousel.Item>
                   <p>PowerPlant ABC</p>
@@ -333,22 +315,22 @@ function Table({ data }) {
 }
 
 const dummyData1 = [
-  { order: 6, date: "2024-03-01", issue: "BCD1", duration: "12 days" },
+  { order: 6, date: "2024-03-01", issue: "BCD2", duration: "12 days" },
 ];
 const dummyData2 = [
-  { order: 7, date: "2024-05-01", issue: "BCD3", duration: "23 days" },
+  { order: 7, date: "2024-05-01", issue: "BCD4", duration: "23 days" },
 ];
 const dummyData3 = [
-  { order: 8, date: "2024-09-01", issue: "BCD2", duration: "12 days" },
+  { order: 8, date: "2024-09-01", issue: "BCD8", duration: "12 days" },
 ];
 const dummyData4 = [
-  { order: 9, date: "2024-03-07", issue: "BCD5", duration: "21 days" },
+  { order: 9, date: "2024-03-07", issue: "BCD2", duration: "21 days" },
 ];
 const dummyData5 = [
-  { order: 10, date: "2024-05-09", issue: "BCD8", duration: "26 days" },
+  { order: 10, date: "2024-05-09", issue: "BCD4", duration: "26 days" },
 ];
 const dummyData6 = [
-  { order: 11, date: "2024-09-11", issue: "BCD9", duration: "12 days" },
+  { order: 11, date: "2024-09-11", issue: "BCD8", duration: "12 days" },
 ];
 
 export default Dashboard;

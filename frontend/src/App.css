@@ -244,3 +244,8 @@
     background-color: rgb(184, 207, 184);
     padding: 20px 20px;
 }
+
+.charts {
+    display: flex;
+    justify-content: right;
+}

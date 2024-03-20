@@ -64,12 +64,12 @@ function LoginUser() {
             />
           </label>
           <div>
-            <button type="submit">Submit</button>
+            <button className="login__submit" type="submit">Submit</button>
           </div>
         </form>
       </div>
       <div>
-        <img src={img} alt="pic" />
+        <img srcset={img} alt="pic" />
       </div>
     </div>
   );
