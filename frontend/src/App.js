@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <Routes>
+        {/* <Routes>
           {Type === "mine" && <Route path="/" exact element={<Coal />} />}
           {Type === "logistics" && <Route path="/" exact element={<Logistics/> } />}
           {Type === "powerplant" && (
