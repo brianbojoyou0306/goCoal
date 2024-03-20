@@ -70,7 +70,12 @@
 
 /* Modal */
 
-.modalContainer {
+.popup-content {
+    background: none;
+    border: none;
+}
+
+.modal {
     max-width: 600px;
     width: 100%;
     position: fixed;
@@ -98,6 +103,8 @@
     padding: 10px;
     color: white;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .content {
@@ -116,14 +123,15 @@
     width: 100%;
     margin: 0.5rem;
     padding: 10px 0;
-    /* border: none; */
-    border: 1px solid green;
-    /* color: #ffffff; */
 }
 
 .btnPrimary {
     background-color: green;
     color: white;
+    padding: 8px 8px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
 }
 
 .btnOutline {
@@ -158,7 +166,7 @@
     outline: none;
     padding: 10px 10px;
     transition: 1s all ease-in-out;
-    width: 250%;
+    width: 100%;
 }
 
 .btn__request:hover {
@@ -203,4 +211,14 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
+}
+
+.navbar__portal {
+    width: 100%;
+    background-color: bisque;
+}
+
+.popup-content {
+    border-radius: 5px;
+    padding: 0.5rem;
 }

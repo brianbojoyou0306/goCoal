@@ -20,7 +20,7 @@ import {
 import "./coal.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Navbar from "./Navbar";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -64,7 +64,9 @@ function Dashboard() {
       <div className="coal" id="coal">
         <div>
           <Space size={20} direction="vertical">
-            <h2>{OrganizationName}</h2>
+            <div className="navbar__portal">
+              <h2>{OrganizationName}Name</h2>
+              </div>
             <h4>DashBoard</h4>
             <Space direction="horizontal">
               <DashboardCard
@@ -94,7 +96,7 @@ function Dashboard() {
                     }}
                   />
                 }
-                title={"Inventory"}
+                title={"Purchased coal per year"}
                 value={inventory}
               />
               
@@ -121,6 +123,7 @@ function Dashboard() {
         </div>
         <div>
           <div className="logout">
+            
             <button onClick={logout}>Logout</button>
           </div>
           <Chart />
