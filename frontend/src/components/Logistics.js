@@ -195,7 +195,6 @@ function DashboardChart() {
         {(close) => (
           <div className="modal">
             <div className="content">
-              
               <Carousel data-bs-theme="dark">
                 <Carousel.Item>
                   <p>PowerPlant ABC</p>
@@ -210,11 +209,18 @@ function DashboardChart() {
                     well-being of both people and the planet. Experience the
                     future of energy production with us.
                   </Expand>
-                  <button className="btnPrimary" onClick={handleButtonClick}>
-                    <span onClick={close} className="bold">
-                      ACCEPT
-                    </span>
-                  </button>
+                  <div className="coal_req_buttons">
+                    <button className="btnPrimary" onClick={handleButtonClick}>
+                      <span onClick={close} className="bold">
+                        ACCEPT
+                      </span>
+                    </button>
+                    <button className="btnOutline">
+                      <span onClick={close} className="bold">
+                        REJECT
+                      </span>
+                    </button>
+                  </div>
                   <br />
                 </Carousel.Item>
                 <Carousel.Item>
@@ -230,11 +236,18 @@ function DashboardChart() {
                     well-being of both people and the planet. Experience the
                     future of energy production with us.
                   </Expand>
-                  <button className="btnPrimary" onClick={handleButtonClick}>
-                    <span onClick={close} className="bold">
-                      ACCEPT
-                    </span>
-                  </button>
+                  <div className="coal_req_buttons">
+                    <button className="btnPrimary" onClick={handleButtonClick}>
+                      <span onClick={close} className="bold">
+                        ACCEPT
+                      </span>
+                    </button>
+                    <button className="btnOutline">
+                      <span onClick={close} className="bold">
+                        REJECT
+                      </span>
+                    </button>
+                  </div>
                   <br />
                 </Carousel.Item>
                 <Carousel.Item>
@@ -250,11 +263,18 @@ function DashboardChart() {
                     well-being of both people and the planet. Experience the
                     future of energy production with us.
                   </Expand>
-                  <button className="btnPrimary" onClick={handleButtonClick}>
-                    <span onClick={close} className="bold">
-                      ACCEPT
-                    </span>
-                  </button>
+                  <div className="coal_req_buttons">
+                    <button className="btnPrimary" onClick={handleButtonClick}>
+                      <span onClick={close} className="bold">
+                        ACCEPT
+                      </span>
+                    </button>
+                    <button className="btnOutline">
+                      <span onClick={close} className="bold">
+                        REJECT
+                      </span>
+                    </button>
+                  </div>
                   <br />
                 </Carousel.Item>
               </Carousel>
@@ -267,7 +287,6 @@ function DashboardChart() {
           </div>
         )}
       </Popup>
-
       <Table data={selectedData} />
     </div>
   );

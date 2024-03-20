@@ -138,10 +138,19 @@
     /* background-color: #a76a99; */
     background-color: white;
     color: green;
+    padding: 8px 8px;
+    margin-top: 20px;
+    border: 0.5px solid green;
+    outline: none;
 }
 
 .bold {
     font-weight: 600;
+}
+
+.coal_req_buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 500px) {

@@ -25,7 +25,7 @@ function App() {
             <Route path="/portal" element={<Portal/>} />
           <Route path="/login" element={<Login />} />
         </Routes>  */}
-        <Login/>
+        <Coal/>
       </div>
     </div>
   );
