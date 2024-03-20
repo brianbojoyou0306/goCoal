@@ -1,6 +1,40 @@
 import React, { useState } from "react";
+import axios from "axios";
 const Plant = ({ open, onClose,item }) => {
   if (!open) return null;
+
+  // const [data, setData] = useState({ reqStock: "", Date: "" });
+  // // eslint-disable-next-line
+  // const [error, setError] = useState(""); 
+  // const handleChange = ({ currentTarget: input }) => {
+  //   setData({ ...data, [input.placeholder]: input.value });
+  //   console.log(input.type);
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(data);
+
+  //   try {
+  //     const url = "http://localhost:8080/api/buycoal";
+  //     console.log(data);
+
+  //     const { data: res } = await axios.post(url, data);
+  //     onClose()
+  //     console.log(res);
+    
+  //   } catch (error) {
+  //     if (
+  //       error.response &&
+  //       error.response.status >= 400 &&
+  //       error.response.status <= 500
+  //     ) {
+  //       setError(error.response.data.message);
+  //       console.log(error);
+  //     }
+  //   }
+  // };
+
 
   return (
     <div onClick={onClose} className="overlay">
@@ -21,12 +55,12 @@ const Plant = ({ open, onClose,item }) => {
               <input
                 className="input__plant"
                 type="number"
-                placeholder="Required Coal in Tons"
+                placeholder="reqStock"
               />
               <input
                 className="input__plant"
                 type="date"
-                placeholder="Enter the delivery date"
+                placeholder="Date"
               />
             </div>
           </div>
