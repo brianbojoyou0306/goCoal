@@ -222,3 +222,25 @@
     border-radius: 5px;
     padding: 0.5rem;
 }
+
+.updated {
+    background-color: rgb(174, 224, 174);
+}
+
+.carousel-control-next {
+    right: 0px;
+    top: 410px;
+    color: black;
+    position: absolute;
+    background-color: rgb(184, 207, 184);
+    padding: 20px 20px;
+}
+
+.carousel-control-prev {
+    left: 0px;
+    top: 410px;
+    position: absolute;
+    color: black;
+    background-color: rgb(184, 207, 184);
+    padding: 20px 20px;
+}

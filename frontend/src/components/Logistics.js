@@ -5,8 +5,11 @@ import {
   ShoppingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import Carousel from "react-bootstrap/Carousel";
+
 import { Card, Space, Statistic } from "antd";
 import Popup from "reactjs-popup";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -167,8 +170,14 @@ function DashboardChart() {
   const [selectedData, setSelectedData] = useState([]);
 
   const handleButtonClick = () => {
-    // Define an array of possible data sets
-    const possibleDataSets = [dummyData1, dummyData2, dummyData3];
+    const possibleDataSets = [
+      dummyData1,
+      dummyData2,
+      dummyData3,
+      dummyData4,
+      dummyData5,
+      dummyData6,
+    ];
     // Randomly select a data set from the array
     const randomIndex = Math.floor(Math.random() * possibleDataSets.length);
     const randomDataSet = possibleDataSets[randomIndex];
@@ -186,9 +195,9 @@ function DashboardChart() {
         {(close) => (
           <div className="modal">
             <div className="content">
-              <p>PowerPlant ABC</p>
-              <h1>BCD1 - BCD2</h1>
-              <Expand>
+              {/* <p>PowerPlant ABC</p>
+              <h1>BCD1 - BCD2</h1> */}
+              {/* <Expand>
                 Our facility utilizes cutting-edge technology to generate clean,
                 reliable energy, powering communities efficiently and
                 responsibly. With a focus on environmental stewardship, we
@@ -198,14 +207,75 @@ function DashboardChart() {
                 of both people and the planet. Experience the future of energy
                 production with us.
               </Expand>
-              <br />
+              <br /> */}
 
-            
-              <button className="btnPrimary" onClick={handleButtonClick}>
+              {/* <button className="btnPrimary" onClick={handleButtonClick}>
                 <span onClick={close} className="bold">
                   ACCEPT
                 </span>
-              </button>
+              </button> */}
+              <Carousel data-bs-theme="dark">
+                <Carousel.Item>
+                  <p>PowerPlant ABC</p>
+                  <h1>BCD1 - BCD2</h1>
+                  <Expand>
+                    Our facility utilizes cutting-edge technology to generate
+                    clean, reliable energy, powering communities efficiently and
+                    responsibly. With a focus on environmental stewardship, we
+                    employ advanced systems to minimize emissions and maximize
+                    efficiency. At the heart of our operations lies a commitment
+                    to delivering uninterrupted power while prioritizing the
+                    well-being of both people and the planet. Experience the
+                    future of energy production with us.
+                  </Expand>
+                  <button className="btnPrimary" onClick={handleButtonClick}>
+                    <span onClick={close} className="bold">
+                      ACCEPT
+                    </span>
+                  </button>
+                  <br />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <p>PowerPlant ABC</p>
+                  <h1>BCD2 - BCD4</h1>
+                  <Expand>
+                    Our facility utilizes cutting-edge technology to generate
+                    clean, reliable energy, powering communities efficiently and
+                    responsibly. With a focus on environmental stewardship, we
+                    employ advanced systems to minimize emissions and maximize
+                    efficiency. At the heart of our operations lies a commitment
+                    to delivering uninterrupted power while prioritizing the
+                    well-being of both people and the planet. Experience the
+                    future of energy production with us.
+                  </Expand>
+                  <button className="btnPrimary" onClick={handleButtonClick}>
+                    <span onClick={close} className="bold">
+                      ACCEPT
+                    </span>
+                  </button>
+                  <br />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <p>PowerPlant ABC</p>
+                  <h1>BCD7 - BCD8</h1>
+                  <Expand>
+                    Our facility utilizes cutting-edge technology to generate
+                    clean, reliable energy, powering communities efficiently and
+                    responsibly. With a focus on environmental stewardship, we
+                    employ advanced systems to minimize emissions and maximize
+                    efficiency. At the heart of our operations lies a commitment
+                    to delivering uninterrupted power while prioritizing the
+                    well-being of both people and the planet. Experience the
+                    future of energy production with us.
+                  </Expand>
+                  <button className="btnPrimary" onClick={handleButtonClick}>
+                    <span onClick={close} className="bold">
+                      ACCEPT
+                    </span>
+                  </button>
+                  <br />
+                </Carousel.Item>
+              </Carousel>
             </div>
             <div>
               <button className="closeBtn " onClick={close}>
@@ -239,10 +309,10 @@ function Table({ data }) {
           {data.map((selectedDataSet, index) =>
             selectedDataSet.map((item, idx) => (
               <tr key={`${index}-${idx}`}>
-                <td>{item.order}</td>
-                <td>{item.date}</td>
-                <td>{item.issue}</td>
-                <td>{item.duration}</td>
+                <td className="updated">{item.order}</td>
+                <td className="updated">{item.date}</td>
+                <td className="updated">{item.issue}</td>
+                <td className="updated">{item.duration}</td>
               </tr>
             ))
           )}
